@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <NSURLConnectionDataDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (nonatomic, strong) NSString *response;
 
 @end
 
