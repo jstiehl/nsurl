@@ -42,6 +42,8 @@
     
     NSString *fullName = [NSString stringWithFormat:firstName];
     
+    
+    
     fullName = [fullName stringByAppendingString:lastName];
     
     self.nameLabel.text = fullName;
