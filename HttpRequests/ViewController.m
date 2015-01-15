@@ -19,11 +19,11 @@
     // Do any additional setup after loading the view, typically from a nib.
    self.nameLabel.text = @"Push Button";
     
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://carering.herokuapp.com/register"]];
-//    [request setHTTPMethod:@"POST"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://carering.herokuapp.com/profile/1"]];
+
     
-    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://carering.herokuapp.com/register"]];
-    [postRequest setHTTPMethod:@"POST"];
+//    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://carering.herokuapp.com/register"]];
+//    [postRequest setHTTPMethod:@"POST"];
 
 //    NSDictionary* jsonDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
 //                                    @"Value1", @"Key1",
@@ -33,7 +33,7 @@
 //    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:jsonDictionary
 //                                                       options:NSJSONWritingPrettyPrinted error:&error];
     
-    NSURLConnection *connection = [NSURLConnection connectionWithRequest:postRequest delegate:self];
+    NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
     if(connection){
         self.nameLabel.text = @"Connecting....";
     } else {
@@ -43,7 +43,7 @@
 }
 
 - (IBAction)getData:(id)sender {
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://carering.herokuapp.com/profile/jstiehl@hobo.com"]];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://carering.herokuapp.com/ring/1"]];
     NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
     if(connection){
         self.nameLabel.text = @"Connecting....";
@@ -53,7 +53,8 @@
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    //self.response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    self.response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    //NSLog(@"%@", self.response);
     [connection cancel];
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     NSLog(@"%@", json);
