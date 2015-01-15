@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,14 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8H-eL-XUa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8H-eL-XUa">
                                 <rect key="frame" x="77" y="218" width="166" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="fmO-8n-bmn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bD-Rz-hqO">
-                                <rect key="frame" x="99" y="320" width="122" height="77"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bD-Rz-hqO">
+                                <rect key="frame" x="99" y="320" width="122" height="31"/>
                                 <color key="backgroundColor" red="0.38635453860000002" green="1" blue="0.29321087600000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="0.081907871719999997" blue="0.082104197719999994" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,6 +39,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.26294585100000001" green="0.34439239519999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7bD-Rz-hqO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="83" id="8Fx-f7-5Av"/>
+                            <constraint firstItem="7bD-Rz-hqO" firstAttribute="top" secondItem="D8H-eL-XUa" secondAttribute="bottom" constant="44" id="FRO-oB-9Ra"/>
+                            <constraint firstItem="D8H-eL-XUa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="61" id="HlN-gq-DZA"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7bD-Rz-hqO" secondAttribute="bottom" constant="217" id="Pcb-by-LdK"/>
+                            <constraint firstItem="7bD-Rz-hqO" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="g19-9a-PrX"/>
+                            <constraint firstItem="D8H-eL-XUa" firstAttribute="centerX" secondItem="7bD-Rz-hqO" secondAttribute="centerX" id="mEb-PE-vm0"/>
+                            <constraint firstItem="D8H-eL-XUa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="198" id="zfm-Nc-0px"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
